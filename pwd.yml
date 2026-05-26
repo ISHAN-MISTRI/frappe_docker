@@ -9,6 +9,7 @@ services:
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
+      - ../erpnext-MobileFirst:/home/frappe/frappe-bench/apps/erpnext
     environment:
       DB_HOST: db
       DB_PORT: "3306"
@@ -43,6 +44,7 @@ services:
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
+      - ../erpnext-MobileFirst:/home/frappe/frappe-bench/apps/erpnext
 
   create-site:
     image: frappe/erpnext:v16.19.1
@@ -54,6 +56,7 @@ services:
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
+      - ../erpnext-MobileFirst:/home/frappe/frappe-bench/apps/erpnext
     entrypoint:
       - bash
       - -c
@@ -123,6 +126,7 @@ services:
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
+      - ../erpnext-MobileFirst:/home/frappe/frappe-bench/apps/erpnext
     ports:
       - "8080:8080"
 
@@ -141,6 +145,7 @@ services:
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
+      - ../erpnext-MobileFirst:/home/frappe/frappe-bench/apps/erpnext
     environment:
       FRAPPE_REDIS_CACHE: redis://redis-cache:6379
       FRAPPE_REDIS_QUEUE: redis://redis-queue:6379
@@ -160,6 +165,7 @@ services:
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
+      - ../erpnext-MobileFirst:/home/frappe/frappe-bench/apps/erpnext
     environment:
       FRAPPE_REDIS_CACHE: redis://redis-cache:6379
       FRAPPE_REDIS_QUEUE: redis://redis-queue:6379
@@ -195,6 +201,7 @@ services:
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
+      - ../erpnext-MobileFirst:/home/frappe/frappe-bench/apps/erpnext
 
   websocket:
     image: frappe/erpnext:v16.19.1
@@ -212,6 +219,7 @@ services:
     volumes:
       - sites:/home/frappe/frappe-bench/sites
       - logs:/home/frappe/frappe-bench/logs
+      - ../erpnext-MobileFirst:/home/frappe/frappe-bench/apps/erpnext
 
 volumes:
   db-data:
